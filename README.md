@@ -28,10 +28,10 @@ In this retrieval system, i implemented several image features descriptors:
 ## Part 2. Indexing dataset
 
 Now apply image descriptor to each image in your dataset, extract features from these images, and write the features to storage (ex. CSV file, RDBMS, Redis, etc.) so that they can be later compared for similarity.</br>
-color-based - run python3 /color/index.py --index index.csv </br>
-texture-based - run python3 /gabor/index.py --index index.csv </br>
-shape-based - run python3 /hog/index.py --index index.csv </br>
-vgg16 - run python3 /vgg16/index.py --index index.h5 </br>
+**color-based** - `run python3 /color/index.py --index index.csv` </br>
+**texture-based** - `run python3 /gabor/index.py --index index.csv` </br>
+**shape-based** - `run python3 /hog/index.py --index index.csv` </br>
+**vgg16** - `run python3 /vgg16/index.py --index index.h5` </br>
 
 
 ## Part 3. Define Similarity metric
@@ -43,17 +43,21 @@ I used chi-squared distance for color histogram and HOG methods, Least square er
 
 This part performs actual search of user query image by (1) extracting features from this query image and then (2) apply your similarity function to compare the query features to the features already indexed. From there, system returns the most relevant results according to your similarity function.</br>
 
-Query 1 - pyramids <img src="https://github.com/vamc-stash/image-retrieval/blob/master/query_images/egypt.jpg" alt="pyramids" width="125" height="125"> </br>
-
-**color** 
-`**run** python3 search.py --query ../query_images/tajmahal.jpg --c color `
-
-###gabor
->run python3 search.py --query ../query_images/tajmahal.jpg --c gabor 
-##HOG
->run python3 search.py --query ../query_images/tajmahal.jpg --c hog 
-###vgg16 
->run python3 search.py --query ../query_images/tajmahal.jpg --c vgg16
+### Query 1 - pyramids </br>
+<img src="https://github.com/vamc-stash/image-retrieval/blob/master/query_images/egypt.jpg" alt="pyramids" width="150" height="150"> </br>
+### Results (Top 5 of each method)
+**color** <br>
+`run python3 search.py --query ../query_images/tajmahal.jpg --c color`
+<img src="https://github.com/vamc-stash/image-retrieval/blob/master/results/q1_color_result.png" alt="color-result" > </br>
+**gabor** <br>
+`run python3 search.py --query ../query_images/tajmahal.jpg --c gabor`
+<img src="https://github.com/vamc-stash/image-retrieval/blob/master/results/q1_gabor_result.png" alt="color-result" > </br>
+**hog** <br>
+`run python3 search.py --query ../query_images/tajmahal.jpg --c hog`
+<img src="https://github.com/vamc-stash/image-retrieval/blob/master/results/q1_hog_result.png" alt="color-result" > </br>
+**vgg16** <br>
+`run python3 search.py --query ../query_images/tajmahal.jpg --c vgg16`
+<img src="https://github.com/vamc-stash/image-retrieval/blob/master/results/q1_vgg16_result.png" alt="color-result" > </br>
 
 
 
