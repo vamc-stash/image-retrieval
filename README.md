@@ -43,10 +43,11 @@ I used chi-squared distance for color histogram and HOG methods, Least square er
 
 This part performs actual search of user query image by (1) extracting features from this query image and then (2) apply your similarity function to compare the query features to the features already indexed. From there, system returns the most relevant results according to your similarity function.</br>
 
-Query 1 - tajmahal.jpg </br>
+Query 1 - pyramids <img src="https://github.com/vamc-stash/image-retrieval/blob/master/query_images/egypt.jpg" alt="pyramids" width="125" height="125"> </br>
 
-###color 
->run python3 search.py --query ../query_images/tajmahal.jpg --c color 
+**color** 
+`**run** python3 search.py --query ../query_images/tajmahal.jpg --c color `
+
 ###gabor
 >run python3 search.py --query ../query_images/tajmahal.jpg --c gabor 
 ##HOG
