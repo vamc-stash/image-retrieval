@@ -1,3 +1,5 @@
+[ Assignment-2 for Elective CSPE31 ]
+
 # Image-Retrieval (Content-Based Image Retrieval System)
 
 ## Introduction
